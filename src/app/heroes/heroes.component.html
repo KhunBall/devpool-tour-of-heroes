@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-between my-2">
+    <h4>My Heroes</h4>
+    <button 
+        class="btn btn-primary"
+        routerLink="/hero-form">
+        Add
+    </button>
+</div>
+
+<app-alert *ngIf="message" [message]="message"></app-alert>
+
+<ul class="list-grup">
+    <li 
+        class="list-group-item list-group-item-action"  
+        *ngFor="let hero of heroes">
+        
+        <div class="d-flex justify-content-between">
+            <a class="text-decoration-none" routerLink="/hero-form/{{ hero.id }}">
+                <span class="badge"> {{ hero.id }} </span>
+                {{ hero.name }}
+            </a>
+            <a class="btn btn-danger btn-sm" 
+                (click)="onDeleteHero(hero.id)">
+                <i class="bi bi-trash"></i>
+            </a>
+        </div>
+
+        
+    </li>
+</ul>
