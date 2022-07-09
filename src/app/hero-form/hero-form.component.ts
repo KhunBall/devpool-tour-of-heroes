@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
 
@@ -11,9 +11,9 @@ import { HeroService } from '../hero.service';
 })
 export class HeroFormComponent implements OnInit {
 
-  heroFormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl()
+  heroFormGroup = new UntypedFormGroup({
+    id: new UntypedFormControl(),
+    name: new UntypedFormControl()
   })
 
   constructor(

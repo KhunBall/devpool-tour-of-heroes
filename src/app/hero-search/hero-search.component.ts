@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map, Observable, Subject, switchMap, takeUntil } from 'rxjs';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
@@ -13,7 +13,7 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
 
   _destroy$ = new Subject<void>();
 
-  termFormControl = new FormControl();
+  termFormControl = new UntypedFormControl();
 
   heroes: Hero[] = [];
 
